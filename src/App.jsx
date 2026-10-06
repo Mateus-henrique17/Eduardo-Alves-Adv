@@ -6,7 +6,7 @@ import { HomePage } from "./pages/Home/HomePage.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Eduardo-Alves-Adv">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
