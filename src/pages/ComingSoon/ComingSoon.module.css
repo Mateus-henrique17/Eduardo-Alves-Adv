@@ -1,0 +1,54 @@
+.page {
+  display: grid;
+  min-height: 55vh;
+  padding: 5rem 1.5rem;
+  place-items: center;
+  box-sizing: border-box;
+  background-color: var(--color-brand-soft);
+  text-align: center;
+}
+
+.content {
+  width: min(100%, 680px);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-brand-accent-hover);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-brand-primary);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.description {
+  margin: 1rem 0 2rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  background-color: var(--color-brand-accent-hover);
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.homeLink:hover {
+  background-color: var(--color-brand-primary);
+}
+
+.homeLink:focus-visible {
+  outline: 3px solid var(--color-brand-primary);
+  outline-offset: 4px;
+}

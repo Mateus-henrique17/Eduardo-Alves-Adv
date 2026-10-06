@@ -1,0 +1,162 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color-overlay);
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 620px);
+  max-height: min(80vh, 720px);
+  overflow: hidden;
+  padding: 36px;
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1px solid var(--color-brand-accent);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px var(--color-shadow-medium);
+}
+
+.modalContent {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: var(--color-brand-primary);
+  background: var(--color-brand-soft);
+}
+
+.closeButton:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: var(--color-brand-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 36px 16px 0;
+  color: var(--color-text-strong);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0 0 20px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.detailGroup + .detailGroup {
+  margin-top: 20px;
+}
+
+.detailGroup h3 {
+  margin-bottom: 8px;
+  color: var(--color-brand-primary);
+  font-size: 1rem;
+}
+
+.detailGroup ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding-top: 16px;
+  background: var(--color-white);
+}
+
+.ctaContainer :global(a) {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .backdrop {
+    padding: 16px;
+  }
+
+  .modal {
+    max-height: 90vh;
+    max-height: 90dvh;
+    padding: 24px 18px 16px;
+  }
+
+  .modalContent {
+    padding-top: 8px;
+  }
+
+  .eyebrow {
+    margin-bottom: 5px;
+    font-size: 0.72rem;
+  }
+
+  .title {
+    margin: 0 34px 10px 0;
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+
+  .description {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .detailGroup + .detailGroup {
+    margin-top: 12px;
+  }
+
+  .detailGroup h3 {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .detailGroup ul {
+    gap: 4px;
+    padding-left: 18px;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .ctaContainer {
+    padding-top: 10px;
+  }
+}

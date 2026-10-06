@@ -1,0 +1,32 @@
+/* Linha base */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-brand-soft);
+  width: 100%;
+  max-width: 600px; /* AJUSTE AQUI */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solid {
+  border-top-style: solid;
+}
+.dashed {
+  border-top-style: dashed;
+}
+.dotted {
+  border-top-style: dotted;
+}
+
+.spacingSmall {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.spacingMedium {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.spacingLarge {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}

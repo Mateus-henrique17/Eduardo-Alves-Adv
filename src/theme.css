@@ -1,0 +1,67 @@
+:root {
+  /* Paleta da marca (INALTERADA e SÓLIDA) */
+  --color-brand-primary: #555934;
+  --color-brand-soft: #f2e6d8;
+  --color-brand-accent: #bf9b7a;
+  --color-brand-accent-hover: #8c5b3e;
+
+  /* NOVA VARIÁVEL: Pega o seu verde original e aplica 80% de opacidade */
+  --color-header-bg-translucent: color-mix(
+    in srgb,
+    var(--color-brand-primary) 80%,
+    transparent
+  );
+
+  /* Texto, superfícies e bordas */
+  --color-white: #ffffff;
+  --color-text: #333333;
+  --color-text-strong: #1f2937;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #b3b3b3;
+  --color-border-dark: #333333;
+
+  /* Tons translúcidos usados em sobreposições e sombras */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-shadow-soft: rgba(0, 0, 0, 0.1);
+  --color-shadow-medium: rgba(0, 0, 0, 0.15);
+  --color-shadow-faint: rgba(0, 0, 0, 0.05);
+  --color-brand-accent-shadow: rgba(191, 155, 122, 0.2);
+  --color-brand-primary-shadow: rgba(85, 89, 52, 0.3);
+  --color-header-border: rgba(191, 155, 122, 0.15);
+
+  /* Ajustado: Menu mobile também usa o truque do color-mix para herdar o seu verde original com transparência */
+  --color-glass: color-mix(
+    in srgb,
+    var(--color-brand-primary) 90%,
+    transparent
+  );
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+html,
+#root {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}

@@ -1,0 +1,79 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 60px;
+}
+
+.hero {
+  display: grid;
+  min-height: 280px;
+  width: 100%;
+  padding: 96px 24px 40px;
+  place-items: center;
+  background-image:
+    linear-gradient(var(--color-overlay), var(--color-overlay)),
+    url("../../assets/images/hero.jpeg");
+  background-size: cover;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  color: var(--color-brand-soft);
+  text-align: center;
+  box-shadow: 0 10px 30px var(--color-shadow-medium);
+  box-sizing: border-box;
+}
+
+.heroLogoHeading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroLogo {
+  display: block;
+  width: min(360px, 80vw);
+  max-width: 100%;
+  height: auto;
+  filter: invert(1);
+}
+
+.expertiseSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0 0 clamp(24px, 4vw, 40px);
+  color: var(--color-text);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: clamp(16px, 3vw, 24px);
+  width: 100%;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 210px;
+    padding: 88px 20px 28px;
+    background-position: center;
+  }
+
+  .expertiseSection {
+    padding: 32px 16px 0;
+  }
+}

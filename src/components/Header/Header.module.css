@@ -1,0 +1,122 @@
+/* ==================== ESTILOS GERAIS & DESKTOP ==================== */
+
+/* VARIANT: Páginas Internas -> Fixo com Fundo Verde Translucido exclusivo + Desfoque */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-header-bg-translucent); /* Usa a nova cor com transparência */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  z-index: 1000;
+}
+
+/* VARIANT: Home ("/") -> Absoluto e Totalmente Transparente */
+.headerTransparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-header-border);
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* Links (Sempre Creme) */
+.navList li a {
+  color: var(--color-brand-soft);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover e Foco dos Links (Sempre Dourado) */
+.navList li a:hover,
+.navList li a:focus {
+  color: var(--color-brand-accent);
+}
+
+/* Botão do Menu Hamburguer (Creme) */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-brand-soft);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+/* ==================== ESTILOS MOBILE (max-width: 768px) ==================== */
+@media (max-width: 768px) {
+  
+  .header, 
+  .headerTransparent {
+    padding: 1.25rem 2rem;
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    z-index: 1001;
+  }
+
+  /* Gaveta do Menu Mobile herdando a transparência do verde */
+  .navList {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--color-glass);
+    border-top: 1px solid var(--color-glass-border);
+    border-bottom: 2px solid var(--color-brand-accent);
+    z-index: 1000;
+    box-shadow: var(--color-shadow-medium);
+  }
+
+  .header .navList li a,
+  .headerTransparent .navList li a {
+    color: var(--color-brand-soft);
+    font-size: 1.5rem;
+  }
+
+  .header .navList li a:hover,
+  .headerTransparent .navList li a:hover {
+    color: var(--color-brand-accent);
+  }
+
+  .navList.open {
+    display: flex;
+  }
+}
