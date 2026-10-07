@@ -27,7 +27,15 @@
 .heroLogoHeading {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: min(100%, 640px);
+  padding: 1.25rem 2rem;
+  background: rgba(24, 25, 20, 0.58);
+  border: 1px solid rgba(242, 230, 216, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-sizing: border-box;
 }
 
 .heroLogo {
@@ -71,6 +79,11 @@
     min-height: 210px;
     padding: 88px 20px 28px;
     background-position: center;
+  }
+
+  .heroLogoHeading {
+    padding: 1rem;
+    border-radius: 12px;
   }
 
   .expertiseSection {

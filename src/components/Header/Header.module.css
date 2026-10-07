@@ -6,14 +6,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--color-header-bg-translucent); /* Usa a nova cor com transparência */
-  backdrop-filter: blur(10px); 
+  background-color: var(
+    --color-header-bg-translucent
+  ); /* Usa a nova cor com transparência */
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 1.25rem 2rem;
   z-index: 1000;
+  border-bottom: 1px solid var(--color-header-border);
 }
 
 /* VARIANT: Home ("/") -> Absoluto e Totalmente Transparente */
@@ -67,10 +70,9 @@
 
 /* ==================== ESTILOS MOBILE (max-width: 768px) ==================== */
 @media (max-width: 768px) {
-  
-  .header, 
+  .header,
   .headerTransparent {
-    padding: 1.25rem 2rem;
+    padding: 1rem 1.25rem;
   }
 
   .menuButton {
@@ -78,7 +80,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 2rem;
+    left: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
     width: 32px;
@@ -94,7 +96,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 1.5rem;
     gap: 1.25rem;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -118,5 +120,17 @@
 
   .navList.open {
     display: flex;
+  }
+}
+
+@media (max-width: 380px) {
+  .navList {
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .header .navList li a,
+  .headerTransparent .navList li a {
+    font-size: 1.25rem;
   }
 }

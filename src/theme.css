@@ -1,6 +1,7 @@
 :root {
   /* Paleta da marca (INALTERADA e SÓLIDA) */
   --color-brand-primary: #555934;
+  --color-brand-secondary:#593e2e;
   --color-brand-soft: #f2e6d8;
   --color-brand-accent: #bf9b7a;
   --color-brand-accent-hover: #8c5b3e;
