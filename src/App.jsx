@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./layout/index.jsx";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon.jsx";
 import { ExpertisesPage } from "./pages/Expertises/ExpertisesPage.jsx";
@@ -6,7 +6,7 @@ import { HomePage } from "./pages/Home/HomePage.jsx";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
@@ -25,7 +25,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
