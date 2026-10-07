@@ -1,19 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./layout/index.jsx";
-import { ExpertisesPage } from "./pages/Expertises/ExpertisesPage.jsx";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon.jsx";
+import { ExpertisesPage } from "./pages/Expertises/ExpertisesPage.jsx";
 import { HomePage } from "./pages/Home/HomePage.jsx";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/sobre" element={<ComingSoon title="Sobre" />} />
-          <Route
-            path="/atuacao"
-            element={<ExpertisesPage />} />
+          <Route path="/atuacao" element={<ExpertisesPage />} />
           <Route path="/artigos" element={<ComingSoon title="Artigos" />} />
           <Route path="/contato" element={<ComingSoon title="Contato" />} />
           <Route
@@ -27,7 +25,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
