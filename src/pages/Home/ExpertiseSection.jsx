@@ -61,6 +61,7 @@ export const ExpertiseSection = () => {
 
   return (
     <section className={styles.section} aria-labelledby="expertise-title">
+      <p className={styles.eyebrow}>Eduardo Alves Advocacia</p>
       <h2 id="expertise-title" className={styles.sectionTitle}>
         Conheça nossas áreas de atuação
       </h2>

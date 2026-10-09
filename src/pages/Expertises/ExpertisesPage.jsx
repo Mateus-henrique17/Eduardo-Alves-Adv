@@ -24,6 +24,7 @@ export const ExpertisesPage = () => {
         className={styles.expertiseSection}
         aria-labelledby="expertise-title"
       >
+        <p className={styles.eyebrow}>Eduardo Alves Advocacia</p>
         <h1 id="expertise-title" className={styles.title}>
           Conheça nossas áreas de atuação
         </h1>

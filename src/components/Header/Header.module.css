@@ -1,8 +1,8 @@
 /* ==================== ESTILOS GERAIS & DESKTOP ==================== */
 
-/* VARIANT: Páginas Internas -> Fixo com Fundo Verde Translucido exclusivo + Desfoque */
+/* VARIANT: Páginas internas -> sobreposto ao topo, sem acompanhar a rolagem */
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -19,13 +19,15 @@
   border-bottom: 1px solid var(--color-header-border);
 }
 
-/* VARIANT: Home ("/") -> Absoluto e Totalmente Transparente */
+/* VARIANT: Home ("/") -> Sobreposto ao topo com o mesmo fundo translúcido */
 .headerTransparent {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: var(--color-header-bg-translucent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
