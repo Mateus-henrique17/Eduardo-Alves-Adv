@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./layout/index.jsx";
 import { AboutPage } from "./pages/About/AboutPage.jsx";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon.jsx";
+import { ContactPage } from "./pages/Contact/ContactPage.jsx";
 import { ExpertisesPage } from "./pages/Expertises/ExpertisesPage.jsx";
 import { HomePage } from "./pages/Home/HomePage.jsx";
 
@@ -14,7 +15,7 @@ function App() {
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/atuacao" element={<ExpertisesPage />} />
           <Route path="/artigos" element={<ComingSoon title="Artigos" />} />
-          <Route path="/contato" element={<ComingSoon title="Contato" />} />
+          <Route path="/contato" element={<ContactPage />} />
           <Route
             path="*"
             element={
