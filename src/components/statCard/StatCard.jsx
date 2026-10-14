@@ -2,29 +2,41 @@ import { useState } from "react";
 import styles from "./StatCard.module.css";
 import { StatCardModal } from "./StatCardModal.jsx";
 
-export const StatCard = ({ variant = "default", label, icon, info, details }) => {
+export const StatCard = ({
+  variant = "default",
+  label,
+  icon,
+  info,
+  details,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const isImage = typeof icon === "string" && 
-    [".jpeg", ".jpg", ".gif", ".png", ".svg", ".webp"].some(ext => icon.toLowerCase().endsWith(ext));
+  const isImage =
+    typeof icon === "string" &&
+    [".jpeg", ".jpg", ".gif", ".png", ".svg", ".webp"].some((ext) =>
+      icon.toLowerCase().endsWith(ext),
+    );
 
-  const cardContent = (
-    <>
-      <span className={styles.cardIcon} aria-hidden="true">
-        {isImage ? (
-          <img
-            src={icon}
-            alt=""
-            className={styles.cardIconImg}
-          />
-        ) : (
-          icon
-        )}
-      </span>
-      <span className={styles.cardLabel}>{label}</span>
-      <span className={styles.cardInfo}>{info}</span>
-    </>
-  );
+  const cardContent =
+    variant === "article" ? (
+      <>
+        <img src={icon} alt="" className={styles.articleImage} />
+        <span className={styles.cardLabel}>{label}</span>
+        <span className={styles.cardInfo}>{info}</span>
+      </>
+    ) : (
+      <>
+        <span className={styles.cardIcon} aria-hidden="true">
+          {isImage ? (
+            <img src={icon} alt="" className={styles.cardIconImg} />
+          ) : (
+            icon
+          )}
+        </span>
+        <span className={styles.cardLabel}>{label}</span>
+        <span className={styles.cardInfo}>{info}</span>
+      </>
+    );
 
   return (
     <>
@@ -49,6 +61,7 @@ export const StatCard = ({ variant = "default", label, icon, info, details }) =>
           onClose={() => setIsModalOpen(false)}
           label={label}
           details={details}
+          variant={variant}
         />
       )}
     </>

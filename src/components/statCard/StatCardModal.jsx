@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { CtaButton } from "../CtaButton/CtaButton.jsx";
 import styles from "./StatCardModal.module.css";
 
-export const StatCardModal = ({ isOpen, onClose, label, details }) => {
+export const StatCardModal = ({ isOpen, onClose, label, details, variant }) => {
   const closeButtonRef = useRef(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const StatCardModal = ({ isOpen, onClose, label, details }) => {
       }}
     >
       <section
-        className={styles.modal}
+        className={`${styles.modal} ${variant === "article" ? styles.articleModal : ""}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="stat-card-modal-title"
@@ -55,10 +55,13 @@ export const StatCardModal = ({ isOpen, onClose, label, details }) => {
           <span aria-hidden="true">×</span>
         </button>
         <div className={styles.modalContent}>
-          <p className={styles.eyebrow}>{label}</p>
+          {variant !== "article" && <p className={styles.eyebrow}>{label}</p>}
           <h2 id="stat-card-modal-title" className={styles.title}>
             {modalTitle}
           </h2>
+          {variant === "article" && details?.photo && (
+            <img className={styles.articlePhoto} src={details.photo} alt="" />
+          )}
           {description && <p className={styles.description}>{description}</p>}
 
           {details?.benefits?.length > 0 && (

@@ -24,6 +24,32 @@
   box-shadow: 0 24px 60px var(--color-shadow-medium);
 }
 
+.articleModal {
+  width: min(100%, 960px);
+  max-height: min(90vh, 900px);
+}
+
+.articleModal .modalContent {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-content: start;
+  align-items: start;
+  gap: 0 28px;
+}
+
+.articleModal .title {
+  grid-column: 1 / -1;
+}
+
+.articlePhoto {
+  display: block;
+  width: 100%;
+  height: 320px;
+  margin: 0;
+  border-radius: 12px;
+  object-fit: fill;
+}
+
 .modalContent {
   min-height: 0;
   overflow-y: auto;
@@ -76,6 +102,11 @@
   margin: 0 0 20px;
   color: var(--color-text-secondary);
   line-height: 1.7;
+  white-space: pre-line;
+}
+
+.articleModal .description {
+  margin: 0;
 }
 
 .detailGroup + .detailGroup {
@@ -119,6 +150,26 @@
     padding: 24px 18px 16px;
   }
 
+  .articleModal {
+    max-height: 94vh;
+    max-height: 94dvh;
+  }
+
+  .articlePhoto {
+    height: 220px;
+  }
+
+  .articleModal .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .articleModal .articlePhoto {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
   .modalContent {
     padding-top: 8px;
   }
@@ -137,7 +188,11 @@
   .description {
     margin-bottom: 12px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.55;
+  }
+
+  .articleModal .description {
+    margin-bottom: 12px;
   }
 
   .detailGroup + .detailGroup {

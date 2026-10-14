@@ -15,6 +15,42 @@
   overflow: hidden;
 }
 
+.cardContainer[data-variant="article"] {
+  justify-content: flex-start;
+  min-height: 360px;
+  padding: 0 0 18px;
+  text-align: left;
+}
+
+.articleImage {
+  display: block;
+  width: 100%;
+  height: 210px;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.cardContainer[data-variant="article"] .cardLabel,
+.cardContainer[data-variant="article"] .cardInfo {
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.cardContainer[data-variant="article"] .cardLabel {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.cardContainer[data-variant="article"] .cardInfo {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 button.cardContainer {
   color: inherit;
   font: inherit;
@@ -73,6 +109,22 @@ button.cardContainer:focus-visible {
 @media (max-width: 600px) {
   .cardContainer {
     padding: 8px;
+  }
+
+  .cardContainer[data-variant="article"] {
+    min-height: 320px;
+    padding: 0 0 14px;
+  }
+
+  .articleImage {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .cardContainer[data-variant="article"] .cardLabel,
+  .cardContainer[data-variant="article"] .cardInfo {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
   .cardIcon {
